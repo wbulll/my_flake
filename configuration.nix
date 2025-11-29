@@ -26,9 +26,14 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
 
+
 nix.settings = {
     experimental-features = [ "nix-command" "flakes" ];
   };
+
+environment.sessionVariables = {
+  FLAKE = "/home/oto/nixos-config"; # Adjust user if needed
+};
 
   ##############################################################################
   # Networking & Host
@@ -267,6 +272,14 @@ hardware.bluetooth = {
 libreoffice-fresh
 
 
+
+
+
+
+
+
+nh
+
     (pkgs.rstudioWrapper.override {
       packages = with pkgs.rPackages; [
         tidyverse
@@ -302,7 +315,6 @@ rgenoud
   system.stateVersion = "25.05"; # Did you read the comment?
 
 }
-
 
 
 
