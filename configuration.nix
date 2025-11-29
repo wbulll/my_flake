@@ -153,10 +153,10 @@ services.printing = {
 
 
 
-#hardware.graphics = {
-#  enable = true;
-#  enable32Bit = true; # For Steam/Wine
-#};
+hardware.graphics = {
+  enable = true;
+  enable32Bit = true; # For Steam/Wine
+};
 
 
 
@@ -230,9 +230,9 @@ hardware.bluetooth = {
     options = "--delete-older-than 3d";
   };
 
-  environment.variables = {
-    AMD_DEBUG = "notiling";
-  };
+  #environment.variables = {
+  #  AMD_DEBUG = "notiling";
+  #};
 
   environment.systemPackages = with pkgs; [
     mission-center
