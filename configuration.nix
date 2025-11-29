@@ -16,9 +16,8 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-#      /etc/nixos/hardware-configuration.nix
-./hardware-configuration.nix 
-     ./vm.nix
+      /etc/nixos/hardware-configuration.nix
+      ./vm.nix
     ];
 
   # Bootloader.
