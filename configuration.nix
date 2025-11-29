@@ -32,9 +32,8 @@ nix.settings = {
   };
 
 environment.sessionVariables = {
-  FLAKE = "/home/oto/nixos-config"; # Adjust user if needed
+  NH_FLAKE = "/home/oto/nixos-config";
 };
-
   ##############################################################################
   # Networking & Host
   ##############################################################################
@@ -274,7 +273,7 @@ libreoffice-fresh
 
 
 
-
+bat
 
 
 
