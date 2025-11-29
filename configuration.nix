@@ -278,6 +278,8 @@ bat
 
 
 nh
+nix-output-monitor
+nvd
 
     (pkgs.rstudioWrapper.override {
       packages = with pkgs.rPackages; [
