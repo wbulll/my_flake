@@ -23,8 +23,7 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.sessionVariables = {
-    NH_FLAKE = "/home/oto/nixos-config";
-    RSTUDIO_CHROMIUM_ARGUMENTS = "--disable-gpu";
+    NH_FLAKE = "/home/oto/nixos-config";    
   };
 
   # ============================================================================
@@ -105,11 +104,12 @@
   services.printing = {
     enable = true;
     drivers = with pkgs; [
-      cups-filters
-      cups-browsed
       epson-201401w
+      #epson-escpr
     ];
   };
+  
+  hardware.sane.enable = true;
 
   services.avahi = {
     enable = true;
@@ -162,25 +162,20 @@
     ffmpeg
     git
     gparted
-    iwd
     mission-center
-    networkmanagerapplet
     nh
     nix-output-monitor
     nvd
     os-prober
     p7zip
     pciutils
-    pipx
     powertop
     steam-run
     tldr
     tty-clock
     unzip
-    usbguard
     usbutils
     zip
-    zsh
     bat
     yazi
     syncthing
@@ -205,7 +200,8 @@
     obsidian
 
     # --- Data Science & R Environment ---
-    (pkgs.rstudioWrapper.override {
+       R
+        (pkgs.rstudioWrapper.override {
       packages = with pkgs.rPackages; [
         # Core
         tidyverse
@@ -219,7 +215,7 @@
         # Modeling & Statistics
         Matching
         MatchIt
-        Rcmdr
+#        Rcmdr
         RItools
         aplpack
         cobalt
